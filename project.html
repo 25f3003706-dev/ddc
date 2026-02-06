@@ -53,6 +53,15 @@
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
+        .gradient-test {
+            background: -webkit-linear-gradient(90deg, #3d5091, var(--primary), var(--accent-blue));
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 8s ease infinite;
+        }
+
         .btn-notch:hover {
             transform: scale(1.1);
             background-color: #39423f;
@@ -91,20 +100,20 @@
             <div class="nav-links-left">
                 <a href="project.html">PROJECTS</a>
             </div>
-
-            <a href="index.html" class="nav-logo">
-                <div class="logo-text">
-                    <span>DD</span>
-                    <span>C</span>
-                </div>
-            </a>
-
+            <div style="position: center;">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-text">
+                        <span>DD</span>
+                        <span>C</span>
+                    </div>
+                </a>
+            </div>
             <div class="nav-links-right">
                 <a href="technology.html">TECHNOLOGY</a>
             </div>
         </div>
 
-        <div class="nav-right"  style="color: azure;">
+        <div class="nav-right" style="color: azure;">
             <a href="contact.html" class="btn-nav">Contact</a>
         </div>
     </nav>
@@ -117,10 +126,12 @@
             <a href="menu/booking.html" data-page="booking" class="mobile-link">EV Booking Platform</a>
             <a href="menu/blog.html" data-page="blog" class="mobile-link">Blog / News</a>
             <div class="icon-links" style="display: flex; justify-content: center; gap: 60px; margin-top: 2rem;">
-             <a href="#" class="nav-icon linkedin-glow" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
-            <a href="#" class="nav-icon instagram-glow" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="#" class="nav-icon youtube-glow" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
-           </div>
+                <a href="#" class="nav-icon linkedin-glow" title="LinkedIn"><ion-icon
+                        name="logo-linkedin"></ion-icon></a>
+                <a href="#" class="nav-icon instagram-glow" title="Instagram"><ion-icon
+                        name="logo-instagram"></ion-icon></a>
+                <a href="#" class="nav-icon youtube-glow" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+            </div>
         </div>
     </div>
 
@@ -147,9 +158,11 @@
     <section class="pt-40 pb-20 px-6 text-center">
         <h2 class="text-sm font-bold tracking-[0.3em] uppercase mb-4 text-gray-400">Our Project Pipeline</h2>
         <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight max-w-5xl mx-auto">
-            Engineering the Future <span class="text-gray-400">of Urban Mobility.</span>
+            Engineering the Future <span class="gradient-test">of Urban Mobility.</span>
         </h1>
-        <p>A showcase of the revolutionary technologies powering the next generation of autonomous electric
+        <p style="color: #06B6D4;font-size: 20px;font-weight: 500;">A showcase of the revolutionary technologies
+            powering the next generation of
+            autonomous electric
             mobility.
         </p>
     </section>
@@ -184,12 +197,12 @@
                     seamless integration across passenger and commercial fleets. Low-floor design with integrated
                     battery housing.</p>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 bg-[--brand-green] rounded-2xl">
-                        <div class="font-bold">800V</div>
+                    <div class="p-4  rounded-2xl" style="background-color: #10B981;">
+                        <div class="font-bold" style="color: var(--primary-text);">800V</div>
                         <div class="text-xs">Architecture</div>
                     </div>
-                    <div class="p-4 bg-[--brand-green] rounded-2xl">
-                        <div class="font-bold">500kW</div>
+                    <div class="p-4  rounded-2xl" style="background-color: #10B981;">
+                        <div class="font-bold" style="color: var(--primary-text);">500kW</div>
                         <div class="text-xs">Peak Power</div>
                     </div>
                 </div>
@@ -278,7 +291,7 @@
                 class="w-full bg-[--brand-button] text-white py-4 rounded-2xl font-bold">Download Full Brief</button>
         </div>
     </div>
-  <script>
+    <script>
         // --- Mobile Menu Toggle Handler ---
         const menuToggle = document.querySelector('.menu-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
@@ -419,53 +432,53 @@
             if (event.target == modal) closeModal();
         }
 
-        // --- Mobile Menu Logic (robust handler) ---
+            // --- Mobile Menu Logic (robust handler) ---
 
-        (function () {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
+            (function () {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const mobileMenu = document.querySelector('.mobile-menu');
 
-            if (!menuToggle || !mobileMenu) return;
+                if (!menuToggle || !mobileMenu) return;
 
-            // Toggle function
-            menuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = mobileMenu.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-                document.body.classList.toggle('menu-open', isOpen);
-                document.body.style.overflow = isOpen ? 'hidden' : '';
-            });
-
-            // Close when any mobile link is clicked
-            document.querySelectorAll('.mobile-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                    document.body.style.overflow = '';
+                // Toggle function
+                menuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = mobileMenu.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                    document.body.classList.toggle('menu-open', isOpen);
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
                 });
-            });
 
-            // Close when clicking outside the menu
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.menu-toggle') && !e.target.closest('.mobile-menu')) {
-                    mobileMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                    document.body.style.overflow = '';
-                }
-            });
+                // Close when any mobile link is clicked
+                document.querySelectorAll('.mobile-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = '';
+                    });
+                });
 
-            // Close on ESC
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    mobileMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                    document.body.style.overflow = '';
-                }
-            });
-        })();
+                // Close when clicking outside the menu
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.menu-toggle') && !e.target.closest('.mobile-menu')) {
+                        mobileMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Close on ESC
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        mobileMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            })();
 
         /* --- Interactive Logo Split on Cursor Proximity --- */
         const navLogo = document.querySelector('.nav-logo');
@@ -492,57 +505,65 @@
                 navLogo.classList.remove('split');
             });
         }
-        
+
     </script>
 
 </body>
 </body>
-    <style>
-        .nav-icon ion-icon {
-            font-size: 2rem;
-            color: #636363;
-            transition: color 0.3s, filter 0.3s, transform 0.3s;
-        }
-        .nav-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .linkedin-glow ion-icon {
-            --glow: 0 0 16px #0077b5, 0 0 32px #0077b5;
-        }
-        .instagram-glow ion-icon {
-            --glow: 0 0 16px #e1306c, 0 0 32px #fdc468;
-        }
-        .youtube-glow ion-icon {
-            --glow: 0 0 16px #ff0000, 0 0 32px #ff0000;
-        }
-        .nav-icon:hover ion-icon {
-            color: var(--accent-blue);
-            filter: drop-shadow(var(--glow));
-            transform: scale(1.2) rotate(-8deg);
-            cursor: pointer;
-        }
-        .linkedin-glow:hover ion-icon {
-            color: #0077b5;
-        }
-        .instagram-glow:hover ion-icon {
-            color: #e1306c;
-        }
-        .youtube-glow:hover ion-icon {
-            color: #ff0000;
-        }
-    </style>
-    <script>
-        document.querySelectorAll('.nav-icon').forEach(icon => {
-            icon.addEventListener('mouseenter', () => {
-                icon.querySelector('ion-icon').style.transform = 'scale(1.2) rotate(-8deg)';
-            });
-            icon.addEventListener('mouseleave', () => {
-                icon.querySelector('ion-icon').style.transform = '';
-            });
+<style>
+    .nav-icon ion-icon {
+        font-size: 2rem;
+        color: #636363;
+        transition: color 0.3s, filter 0.3s, transform 0.3s;
+    }
+
+    .nav-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .linkedin-glow ion-icon {
+        --glow: 0 0 16px #0077b5, 0 0 32px #0077b5;
+    }
+
+    .instagram-glow ion-icon {
+        --glow: 0 0 16px #e1306c, 0 0 32px #fdc468;
+    }
+
+    .youtube-glow ion-icon {
+        --glow: 0 0 16px #ff0000, 0 0 32px #ff0000;
+    }
+
+    .nav-icon:hover ion-icon {
+        color: var(--accent-blue);
+        filter: drop-shadow(var(--glow));
+        transform: scale(1.2) rotate(-8deg);
+        cursor: pointer;
+    }
+
+    .linkedin-glow:hover ion-icon {
+        color: #0077b5;
+    }
+
+    .instagram-glow:hover ion-icon {
+        color: #e1306c;
+    }
+
+    .youtube-glow:hover ion-icon {
+        color: #ff0000;
+    }
+</style>
+<script>
+    document.querySelectorAll('.nav-icon').forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            icon.querySelector('ion-icon').style.transform = 'scale(1.2) rotate(-8deg)';
         });
-    </script>
+        icon.addEventListener('mouseleave', () => {
+            icon.querySelector('ion-icon').style.transform = '';
+        });
+    });
+</script>
 
 <script src="menu/main.js"></script>
 

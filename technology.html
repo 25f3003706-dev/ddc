@@ -24,7 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="menu/gobal.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <style>
         :root {
@@ -207,7 +207,6 @@
                 justify-content: center;
             }
         }
-        
     </style>
 
 
@@ -228,14 +227,14 @@
             <div class="nav-links-left">
                 <a href="project.html">PROJECTS</a>
             </div>
-
-            <a href="index.html" class="nav-logo">
-                <div class="logo-text">
-                    <span>DD</span>
-                    <span>C</span>
-                </div>
-            </a>
-
+            <div style="position: center;">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-text">
+                        <span>DD</span>
+                        <span>C</span>
+                    </div>
+                </a>
+            </div>
             <div class="nav-links-right">
                 <a href="technology.html">TECHNOLOGY</a>
             </div>
@@ -254,10 +253,12 @@
             <a href="menu/booking.html" data-page="booking" class="mobile-link">EV Booking Platform</a>
             <a href="menu/blog.html" data-page="blog" class="mobile-link">Blog / News</a>
             <div class="icon-links" style="display: flex; justify-content: center; gap: 60px; margin-top: 2rem;">
-             <a href="#" class="nav-icon linkedin-glow" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a>
-            <a href="#" class="nav-icon instagram-glow" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="#" class="nav-icon youtube-glow" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
-           </div>
+                <a href="#" class="nav-icon linkedin-glow" title="LinkedIn"><ion-icon
+                        name="logo-linkedin"></ion-icon></a>
+                <a href="#" class="nav-icon instagram-glow" title="Instagram"><ion-icon
+                        name="logo-instagram"></ion-icon></a>
+                <a href="#" class="nav-icon youtube-glow" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+            </div>
         </div>
     </div>
 
@@ -604,51 +605,59 @@
     <script src="menu/main.js"></script>
 </body>
 </body>
-    <style>
-        .nav-icon ion-icon {
-            font-size: 2rem;
-            color: #636363;
-            transition: color 0.3s, filter 0.3s, transform 0.3s;
-        }
-        .nav-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .linkedin-glow ion-icon {
-            --glow: 0 0 16px #0077b5, 0 0 32px #0077b5;
-        }
-        .instagram-glow ion-icon {
-            --glow: 0 0 16px #e1306c, 0 0 32px #fdc468;
-        }
-        .youtube-glow ion-icon {
-            --glow: 0 0 16px #ff0000, 0 0 32px #ff0000;
-        }
-        .nav-icon:hover ion-icon {
-            color: var(--accent-blue);
-            filter: drop-shadow(var(--glow));
-            transform: scale(1.2) rotate(-8deg);
-            cursor: pointer;
-        }
-        .linkedin-glow:hover ion-icon {
-            color: #0077b5;
-        }
-        .instagram-glow:hover ion-icon {
-            color: #e1306c;
-        }
-        .youtube-glow:hover ion-icon {
-            color: #ff0000;
-        }
-    </style>
-    <script>
-        document.querySelectorAll('.nav-icon').forEach(icon => {
-            icon.addEventListener('mouseenter', () => {
-                icon.querySelector('ion-icon').style.transform = 'scale(1.2) rotate(-8deg)';
-            });
-            icon.addEventListener('mouseleave', () => {
-                icon.querySelector('ion-icon').style.transform = '';
-            });
+<style>
+    .nav-icon ion-icon {
+        font-size: 2rem;
+        color: #636363;
+        transition: color 0.3s, filter 0.3s, transform 0.3s;
+    }
+
+    .nav-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .linkedin-glow ion-icon {
+        --glow: 0 0 16px #0077b5, 0 0 32px #0077b5;
+    }
+
+    .instagram-glow ion-icon {
+        --glow: 0 0 16px #e1306c, 0 0 32px #fdc468;
+    }
+
+    .youtube-glow ion-icon {
+        --glow: 0 0 16px #ff0000, 0 0 32px #ff0000;
+    }
+
+    .nav-icon:hover ion-icon {
+        color: var(--accent-blue);
+        filter: drop-shadow(var(--glow));
+        transform: scale(1.2) rotate(-8deg);
+        cursor: pointer;
+    }
+
+    .linkedin-glow:hover ion-icon {
+        color: #0077b5;
+    }
+
+    .instagram-glow:hover ion-icon {
+        color: #e1306c;
+    }
+
+    .youtube-glow:hover ion-icon {
+        color: #ff0000;
+    }
+</style>
+<script>
+    document.querySelectorAll('.nav-icon').forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            icon.querySelector('ion-icon').style.transform = 'scale(1.2) rotate(-8deg)';
         });
-    </script>
+        icon.addEventListener('mouseleave', () => {
+            icon.querySelector('ion-icon').style.transform = '';
+        });
+    });
+</script>
 
 </html>

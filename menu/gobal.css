@@ -1084,6 +1084,15 @@ nav a:focus-visible,
     -webkit-text-fill-color: transparent;
 }
 
+.gradient-text {
+    background: linear-gradient(90deg, #10B981, #06B6D4, #7C3AED);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 8s ease infinite;
+}
+
 .tech-list {
     display: flex;
     flex-direction: column;
@@ -2176,40 +2185,50 @@ iframe {
 /* Body Scroll Lock */
 body.menu-open {
     overflow: hidden;
-}.nav-icon ion-icon {
-            font-size: 2rem;
-            color: #636363;
-            transition: color 0.3s, filter 0.3s, transform 0.3s;
-        }
-        .nav-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .linkedin-glow ion-icon {
-            --glow: 0 0 16px #0077b5, 0 0 32px #0077b5;
-        }
-        .instagram-glow ion-icon {
-            --glow: 0 0 16px #e1306c, 0 0 32px #fdc468;
-        }
-        .youtube-glow ion-icon {
-            --glow: 0 0 16px #ff0000, 0 0 32px #ff0000;
-        }
-        .nav-icon:hover ion-icon {
-            color: var(--accent-blue);
-            filter: drop-shadow(var(--glow));
-            transform: scale(1.2) rotate(-8deg);
-            cursor: pointer;
-        }
-        .linkedin-glow:hover ion-icon {
-            color: #0077b5;
-        }
-        .instagram-glow:hover ion-icon {
-            color: #e1306c;
-        }
-        .youtube-glow:hover ion-icon {
-            color: #ff0000;
-        }
+}
+
+.nav-icon ion-icon {
+    font-size: 2rem;
+    color: #636363;
+    transition: color 0.3s, filter 0.3s, transform 0.3s;
+}
+
+.nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkedin-glow ion-icon {
+    --glow: 0 0 16px #0077b5, 0 0 32px #0077b5;
+}
+
+.instagram-glow ion-icon {
+    --glow: 0 0 16px #e1306c, 0 0 32px #fdc468;
+}
+
+.youtube-glow ion-icon {
+    --glow: 0 0 16px #ff0000, 0 0 32px #ff0000;
+}
+
+.nav-icon:hover ion-icon {
+    color: var(--accent-blue);
+    filter: drop-shadow(var(--glow));
+    transform: scale(1.2) rotate(-8deg);
+    cursor: pointer;
+}
+
+.linkedin-glow:hover ion-icon {
+    color: #0077b5;
+}
+
+.instagram-glow:hover ion-icon {
+    color: #e1306c;
+}
+
+.youtube-glow:hover ion-icon {
+    color: #ff0000;
+}
 
 /* Menu Toggle Animation */
 .menu-toggle span {
