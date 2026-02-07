@@ -13,13 +13,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="gobal.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gobal.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="main.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;700&family=Poppins:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <style>
         .section-subtitle {
             color: var(--text-dim);
             font-size: 1.1rem;
@@ -554,9 +561,37 @@
 </head>
 
 <body>
-    <a href="../index.html" class="back-link">
-        <ion-icon name="arrow-back-outline"></ion-icon> Back
-    </a>
+    <nav>
+        <div class="nav-left">
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <div class="nav-links-left">
+                <a href="project.html">PROJECTS</a>
+            </div>
+            <div style="position: center;">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-text">
+                        <span>DD</span>
+                        <span>C</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-links-right">
+                <a href="technology.html">TECHNOLOGY</a>
+            </div>
+        </div>
+
+        <div class="nav-right" style="color: azure; display: flex; align-items: center; gap: 1rem;">
+            <a href="contact.html" class="btn-nav">Contact</a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -604,7 +639,7 @@
     <!-- Philosophy Section -->
     <section class="section">
         <div class="section-header">
-            <h2>💡 Our Philosophy</h2>
+            <h2><ion-icon name="sparkles-sharp" style="color: #f7ff00;"></ion-icon> Our Philosophy</h2>
             <p>The principles guiding everything we do</p>
         </div>
         <div class="philosophy-grid">
@@ -672,43 +707,43 @@
     </section>
 
     <!-- Journey Timeline -->
-    <section class="section">
-        <div class="section-header">
-            <h2><ion-icon name="analytics-outline" style="color: orangered;"></ion-icon> Our Journey</h2>
-            <p>Milestones that define Dark Dragon Calaestic</p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2020</div>
-                    <h4>Foundation & Vision</h4>
-                    <p>DDC was born from a radical belief: progress should not erase the past, it should carry it
-                        forward.</p>
-                </div>
+    <section class="founder-section" id="culture" aria-labelledby="culture-heading">
+        <div class="founder-wrapper">
+
+            <figure class="founder-image" aria-hidden="true"></figure>
+
+            <div class="founder-content">
+                <h2 class="section-header gradient-text">
+                    Engineering-First
+                </h2>
+
+                <p class="founder-intro">
+                    Dark Dragons Caelestis Pvt Ltd (DDC) is an engineering-first collective
+                    architecting the next generation of autonomous EV infrastructure.
+                    From 2-minute battery swaps to modular BEV platforms, we are redefining
+                    urban and community mobility.
+                </p>
+
+                <h3 id="culture-heading" class="section-header gradient-text">
+                    Culture
+                </h3>
+
+                <p class="founder-body">
+                    At DDC, we are led by engineers, not marketers. Our mindset is rooted in
+                    legacy thinking—where things are built to last, to be repaired, and to
+                    be respected.
+                    <br><br>
+                    This founder-led philosophy ensures that every DDC pod leaving our
+                    facility isn’t just a vehicle, but a statement of engineering excellence.
+                    We build for B2B partners who demand reliability and for communities that
+                    deserve premium, quiet mobility.
+                </p>
+
+                <a href="timeline.html" class="btn-nav manifesto-btn">
+                    The DDC Manifesto
+                </a>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2022</div>
-                    <h4>First Prototype</h4>
-                    <p>Successfully developed and tested the first autonomous EV pod with universal BEV platform
-                        architecture.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2023</div>
-                    <h4>Battery Swap Launch</h4>
-                    <p>Introduced revolutionary 2-3 minute battery swap technology, eliminating charging anxiety
-                        forever.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-year">2025</div>
-                    <h4>Market Expansion</h4>
-                    <p>Deployed across 50+ campuses and gated communities, serving thousands of users daily.</p>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -755,11 +790,47 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <span>DDC</span>
+    <footer class="py-20 border-t border-gray-100 px-[5%]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+            <div class="col-span-2">
+                <div class="flex flex-col items-start">
+                    <div class="nav-logo mb-6 text-xl font-bold tracking-tight text-white uppercase">
+                        Dark Dragons Calaestic
+                    </div>
 
-        <p>Dark Dragon Calaestic &copy; 2024 | Pioneering Sustainable Mobility</p>
+                    <p class="text-sm text-gray-400 max-w-sm mb-9 leading-relaxed">
+                        Connecting people with the future of mobility.
+                    </p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-[#0077b5] transition">LinkedIn</a>
+                    <a href="#" class="text-gray-400 hover:text-[#ff0000] transition">youtube</a>
+                    <a href="#" class="text-gray-400 hover:text-[#e1306c] transition">Instagram</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest mb-6">Portfolio</h4>
+                <ul class="space-y-4 text-sm text-gray-500">
+                    <li><a href="../project.html" class="hover:text-white">Projects</a></li>
+                    <li><a href="#" class="hover:text-white">Research</a></li>
+                    <li><a href="../technology.html" class="hover:text-white">Technologies</a></li>
+                    <li><a href="#" class="hover:text-white">Fleets</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-widest mb-6">Contact</h4>
+                <ul class="space-y-4 text-sm text-gray-500">
+                    <li><a href="../contact.html" class="hover:text-white">Support</a></li>
+                    <li><a href="booking.html" class="hover:text-white">Investor Relations</a></li>
+                    <li><a href="blog.html" class="hover:text-white">Press</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-20 pt-8 border-t text-center text-[10px] text-gray-300 uppercase tracking-widest">
+            © 2026 Dark Dragon Calaestic — All Rights Reserved
+        </div>
     </footer>
+
 
     <script>
         gsap.registerPlugin(ScrollTrigger);

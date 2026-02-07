@@ -22,7 +22,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="menu/gobal.css">
+    <link rel="stylesheet" href="gobal.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -53,13 +53,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        h1,
-        h2,
-        h3 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
 
         /* --- Navigation --- */
 
@@ -187,6 +180,13 @@
             border-top: 1px solid var(--border);
         }
 
+        .gradient-text-1 {
+            background: linear-gradient(90deg, #00ffb3, #32447e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         @media (max-width: 968px) {
 
             .showcase-container,
@@ -263,12 +263,12 @@
     </div>
 
 
-    <section class="pt-40 pb-20 px-6 text-center">
+    <section class="pt-40 pb-20 px-6 text-center section-tech">
         <h2 class="text-sm font-bold tracking-[0.3em] uppercase mb-4 text-gray-400">Our Tech & Features</h2>
         <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight max-w-5xl mx-auto">
-            Pioneering the <span class="text-gray-400">Architecture of Autonomy.</span>
+            Pioneering the <span class="gradient-text-1">Architecture of Autonomy.</span>
         </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p class="text-xl text-aqua-600 max-w-3xl mx-auto leading-relaxed">
             Deep-dive into the proprietary sensor fusion, solid-state energy systems, and neural networks that make
             Dark Dragon Calaestis the safest autonomous platform on Earth.
         </p>
@@ -288,7 +288,7 @@
             </div>
             <div class="content-box">
                 <span>01 — ENERGY</span>
-                <h2>120-Second Swapping</h2>
+                <h2 class="gradient-text-1">120-Second Swapping</h2>
                 <p>Eliminate downtime. Our hot-swap battery technology allows commercial pods to maintain 99%
                     uptime,
                     replacing energy modules faster than a traditional fuel stop.</p>
@@ -319,7 +319,7 @@
             </div>
             <div class="content-box">
                 <span>02 — DYNAMICS</span>
-                <h2>Crab Walk</h2>
+                <h2 class="gradient-text-1">Crab Walk</h2>
                 <p>Equipped with independent 4-wheel steering, the Stalaris platform features "Crab Walk"
                     capabilities
                     for 90-degree lateral movement in tight urban corridors.</p>
@@ -349,7 +349,7 @@
             </div>
             <div class="content-box">
                 <span>03 — BEV Platform</span>
-                <h2>THE INTELLIGENT BACKBONE Content</h2>
+                <h2 class="gradient-text-1">THE INTELLIGENT BACKBONE Content</h2>
                 <p></p>
                 <div class="stats-grid">
                     <div class="stat-item">
@@ -367,7 +367,9 @@
 
     <!-- Tech Gallery Section -->
     <section id="tech-gallery" style="padding: 100px 5%;">
-        <h2 style="text-align: center; margin-bottom: 4rem; font-size: 2.5rem;">Future Ready Infrastructure</h2>
+        <h2 style="text-align: center; margin-bottom: 4rem; font-size: 2.5rem; text-underline-offset: 10px;">Future
+            Ready
+            Infrastructure</h2>
         <div class="industries-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
 
             <!-- Card 1: AI Compute -->
@@ -404,7 +406,7 @@
         <div class="industries-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
 
             <!-- 12 Seater EV pod -->
-            <div class="industry-card" style="background: url('assets/ev-pod-hero.png') center/cover;">
+            <div class="industry-card" style="background: url('images_ddc/stalaris.png') center/cover;">
                 <div class="industry-overlay">
                     <h3>Stalaris</h3>
                     <p>12 Seater EV pod.</p>
@@ -412,7 +414,7 @@
             </div>
 
             <!-- 8 Seater EV pod -->
-            <div class="industry-card" style="background: url('assets/logo-fusion.png') center/cover;">
+            <div class="industry-card" style="background: url('images_ddc/model.webp') center/cover;">
                 <div class="industry-overlay">
                     <h3>orian</h3>
                     <p>6 Seater EV pod.</p>
@@ -420,7 +422,7 @@
             </div>
 
             <!-- 4 Seater EV pod -->
-            <div class="industry-card" style="background: url('assets/ev-pod-hero.png') center/cover;">
+            <div class="industry-card" style="background: url('images_ddc/pod.png') center/cover;">
                 <div class="industry-overlay">
                     <h3>Lunarite</h3>
                     <p>8 Seater EV pod.</p>
@@ -522,10 +524,6 @@
             initScrollAnimations();
             // Mobile menu handled by main.js
         };
-
-
-    </script>
-    <script>
         // --- Three.js Setup (Pod Visualization) ---
 
 

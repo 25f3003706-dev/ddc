@@ -99,6 +99,7 @@
         .back-button:disabled:active {
             opacity: 1;
         }
+
         .news-head {
             font-size: 2.5rem;
             font-weight: 700;
@@ -113,10 +114,52 @@
 
 
     <!-- Antique Decorative Top Bar -->
-    <div class="antique-top-bar"></div>
-    <a href="../index.html" class="back-link">
-        <ion-icon name="arrow-back-outline"></ion-icon> Back
-    </a>
+    <nav>
+        <div class="nav-left">
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="nav-center">
+            <div class="nav-links-left">
+                <a href="project.html">PROJECTS</a>
+            </div>
+            <div style="position: center;">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-text">
+                        <span>DD</span>
+                        <span>C</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-links-right">
+                <a href="technology.html">TECHNOLOGY</a>
+            </div>
+        </div>
+
+        <div class="nav-right" style="color: azure; display: flex; align-items: center; gap: 1rem;">
+            <a href="contact.html" class="btn-nav">Contact</a>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="menu/about.html" data-page="about" class="mobile-link">About Us</a>
+            <a href="menu/Tutorials.html" data-page="tutorials" class="mobile-link">Use Tutorials</a>
+            <a href="menu/booking.html" data-page="booking" class="mobile-link">EV Booking Platform</a>
+            <a href="menu/blog.html" data-page="blog" class="mobile-link">Blog / News</a>
+            <div class="icon-links" style="display: flex; justify-content: center; gap: 60px; margin-top: 2rem;">
+                <a href="#" class="nav-icon linkedin-glow" title="LinkedIn"><ion-icon
+                        name="logo-linkedin"></ion-icon></a>
+                <a href="#" class="nav-icon instagram-glow" title="Instagram"><ion-icon
+                        name="logo-instagram"></ion-icon></a>
+                <a href="#" class="nav-icon youtube-glow" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+            </div>
+        </div>
+    </div>
     <h1 class="news-head">DDC's News room</h1>
 
     <section class="blog-section">
@@ -204,7 +247,7 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
 
     <section id="articles" class="px-[5%] py-20 max-w-7xl mx-auto">
@@ -364,14 +407,14 @@
         <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
             <div class="col-span-2">
                 <div class="flex flex-col items-start">
-  <div class="nav-logo mb-6 text-xl font-bold tracking-tight text-white uppercase">
-    Dark Dragons Calaestic
-  </div>
+                    <div class="nav-logo mb-12 text-xl font-bold tracking-tight text-white uppercase header">
+                        Dark Dragons Calaestic
+                    </div>
 
-  <p class="text-sm text-gray-400 max-w-sm mb-9 leading-relaxed">
-    Building the next generation of autonomous electric mobility for managed environments.
-  </p>
-</div>
+                    <p class="text-sm text-gray-400 max-w-sm mb-9 leading-relaxed paragraph">
+                        Building the next generation of autonomous electric mobility for managed environments.
+                    </p>
+                </div>
                 <div class="flex gap-4">
                     <a href="#" class="text-gray-400 hover:text-[#0077b5] transition">LinkedIn</a>
                     <a href="#" class="text-gray-400 hover:text-[#ff0000] transition">youtube</a>

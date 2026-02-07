@@ -26,10 +26,14 @@
 h1,
 h2,
 h3,
+h4,
 .section-title {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
     color: #1F2937;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
 }
 
 body,
@@ -55,7 +59,7 @@ a:hover {
 
 :root {
     --primary: #10B981;
-    --secondary: #06B6D4;
+    --secondary: linear-gradient(135deg, #06B6D4 60%, #10B981 30%, #06d410 10%);
     --accent: #7C3AED;
     --bg-color: #f8f9fa;
     --accent-blue: #7edbf2;
@@ -427,6 +431,50 @@ section {
     position: relative;
 }
 
+.founder-section {
+    padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.founder-wrapper {
+    display: grid;
+    grid-template-columns: minmax(280px, 420px) 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+}
+
+.founder-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 24px;
+    background-size: cover;
+    background-position: center;
+}
+
+.founder-content {
+    max-width: 700px;
+}
+
+.founder-intro {
+    max-width: 650px;
+    color: var(--text-dim);
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.founder-body {
+    color: var(--text-main);
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.8;
+    margin-top: 2rem;
+}
+
+.manifesto-btn {
+    margin-top: 3rem;
+    display: inline-flex;
+}
+
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -703,6 +751,18 @@ nav a,
     display: inline-block;
 }
 
+nav {
+    transition: transform 0.35s ease, opacity 0.25s ease;
+    will-change: transform;
+}
+
+/* Hidden state */
+nav.nav-hidden {
+    transform: translate(-50%, -120%);
+    opacity: 0;
+    backdrop-filter: blur(0px);
+}
+
 /* subtle underline used on some layouts */
 nav a::after,
 .nav-links>li>a::after,
@@ -935,118 +995,6 @@ nav a:focus-visible,
     pointer-events: none;
 }
 
-/* --- Impact Detail Section --- */
-.impact-detail {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
-    gap: 4rem;
-    align-items: start;
-    background: #fff;
-    padding: 120px 10%;
-}
-
-.impact-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.impact-item {
-    border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 1.5rem;
-    cursor: pointer;
-}
-
-.impact-header {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    justify-content: space-between;
-}
-
-.impact-item.right-aligned .impact-header {
-    flex-direction: row-reverse;
-    text-align: right;
-}
-
-.impact-header h3 {
-    color: var(--text-main);
-    font-size: 1.1rem;
-    margin: 0;
-    transition: color 0.3s;
-}
-
-.plus-icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: var(--accent-blue);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-}
-
-.impact-item.active .plus-icon {
-    transform: rotate(45deg);
-    color: var(--accent-red);
-}
-
-.impact-item.active h3 {
-    color: var(--accent-blue);
-}
-
-.impact-desc {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-}
-
-.impact-item.active .impact-desc {
-    grid-template-rows: 1fr;
-}
-
-.impact-desc p {
-    min-height: 0;
-    color: var(--text-dim);
-    line-height: 1.6;
-    margin-top: 1rem;
-    font-size: 0.95rem;
-}
-
-.impact-gif-box {
-    position: sticky;
-    top: 120px;
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
-    background: #f8f9fa;
-    aspect-ratio: 4/5;
-}
-
-.impact-gif-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-@media (max-width: 1100px) {
-    .impact-detail {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .impact-gif-box {
-        order: -1;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-}
-
 /* --- Technology Section Styles --- */
 #technology {
     padding: 80px 0;
@@ -1216,14 +1164,6 @@ nav a:focus-visible,
 
 
 
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
 
 
 
@@ -1533,21 +1473,6 @@ section {
     .tech-preview {
         grid-template-columns: 1fr;
     }
-}
-
-
-
-
-
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-
 }
 
 /* --- Modern Floating Navigation --- */
@@ -1937,10 +1862,6 @@ nav {
         gap: 1rem;
     }
 
-    .impact-item {
-        padding: 1rem;
-    }
-
     .contact-form {
         padding: 40px 2%;
     }
@@ -1991,9 +1912,6 @@ nav {
         padding: 1.2rem;
     }
 
-    .impact-item {
-        padding: 0.7rem;
-    }
 
     .contact-form {
         padding: 20px 1%;
@@ -2308,25 +2226,6 @@ section {
     border-color: var(--primary);
 }
 
-/* --- Impact (Stats) --- */
-.impact-section {
-    background: var(--primary);
-    color: var(--text-main);
-    border-radius: 40px;
-    margin: 0 2%;
-    text-align: center;
-}
-
-.impact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-}
-
-.stat-item h3 {
-    font-size: 3.5rem;
-    font-family: var(--font-heading);
-}
 
 /* --- Industries --- */
 .industry-list {
@@ -2397,7 +2296,6 @@ textarea {
     .hero,
     .about-grid,
     .solutions-grid,
-    .impact-grid,
     .contact-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -2686,25 +2584,58 @@ footer {
 
 /* --- Founder Section --- */
 .founder-section {
-    padding: 100px 10%;
+    padding: clamp(3rem, 8vw, 7rem) 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(2rem, 5vw, 6rem);
     align-items: center;
     background: #fff;
 }
 
 .founder-image {
     height: 600px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
     background: #e0e0e0 url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000') center;
     background-size: cover;
     border-radius: 40px;
     filter: grayscale(100%);
     transition: filter 0.5s;
+    background-size: cover;
+    background-position: center;
 }
 
 .founder-image:hover {
     filter: grayscale(0%);
+}
+
+.founder-content {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.founder-intro {
+    max-width: 650px;
+    color: var(--text-dim);
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.founder-body {
+    color: var(--text-main);
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.8;
+    margin-top: 2rem;
+}
+
+.manifesto-btn {
+    margin-top: 3rem;
+    display: inline-flex;
 }
 
 footer {
@@ -2781,19 +2712,6 @@ footer {
     flex-direction: row-reverse;
 }
 
-/* Impact Section refinement */
-.impact-item {
-    background: var(--glass);
-    padding: 1.5rem;
-    border-radius: 15px;
-    margin-bottom: 1rem;
-    border: 1px solid var(--glass-border);
-    transition: all 0.3s ease;
-}
-
-.impact-item:hover {
-    border-color: var(--accent-blue);
-}
 
 /* Mobile responsive fix for tutorial steps */
 @media (max-width: 968px) {

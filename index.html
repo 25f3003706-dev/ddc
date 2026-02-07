@@ -19,7 +19,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
     <link rel="stylesheet" href="gobal.css">
-    <link rel="stylesheet" href="contact-styles.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -79,7 +78,7 @@
 
     <section id="hero" class="hero">
         <div class="hero-content">
-            <h1>A NEW WAVE OF <span class="gradient-text">MOBILIZING INDIA</span></h1>
+            <h1>A NEW WAVE OF <span class="gradient-test">MOBILIZING INDIA</span></h1>
             <p>Dark Dragons Calaestis develops modular electric platforms and autonomous EV pods.</p>
             <div class="cta-group">
                 <a href="journey/timeline.html" class="btn btn-red">journey</a>
@@ -165,28 +164,7 @@
 
 
     <!-- New Impact Detail Section -->
-    <section id="impact" class="impact-section">
-        <span class="section-tag">Our Footprint</span>
-        <h2 class="section-title">Measured Impact</h2>
-        <div class="impact-grid">
-            <div class="stat-item">
-                <h3 id="stat1">0</h3>
-                <p>Carbon Emissions</p>
-            </div>
-            <div class="stat-item">
-                <h3 id="stat2">0</h3>
-                <p>Smart Hubs</p>
-            </div>
-            <div class="stat-item">
-                <h3 id="stat3">0</h3>
-                <p>Miles Driven</p>
-            </div>
-            <div class="stat-item">
-                <h3 id="stat4">0</h3>
-                <p>Countries</p>
-            </div>
-        </div>
-    </section>
+
     <section id="industries">
         <h2 style="text-align: center; margin-bottom: 4rem;">Industries Served</h2>
         <div class="industries-grid">
@@ -259,7 +237,20 @@
 
     <div id="cursor"></div>
     <div id="cursor-dot"></div>
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
 
+            <div class="footer-info">
+                <p>Dark Dragons Calaestis develops modular electric platforms and autonomous EV pods.</p>
+            </div>
+        </div>
+    </footer>
     <script>
         // --- Three.js Setup (Pod Visualization) ---
         let scene, camera, renderer, podGroup;
@@ -339,52 +330,43 @@
             });
 
             // Impact Counters
-            const startCounter = (id, target) => {
-                let obj = { val: 0 };
-                gsap.to(obj, {
-                    val: target,
-                    duration: 2.5,
-                    scrollTrigger: {
-                        trigger: "#impact",
-                        start: "top 80%"
-                    },
-                    onUpdate: () => {
-                        const el = document.getElementById(id);
-                        if (el) {
-                            el.innerText = Math.floor(obj.val) + (id === 'stat3' ? 'M+' : '+');
-                        }
-                    }
-                });
-            };
 
-            startCounter('stat1', 0);
-            startCounter('stat2', 0);
-            startCounter('stat3', 0);
-            startCounter('stat4', 0);
         }
 
         function initMobileMenu() {
-            const menuToggle = document.querySelector('.menu-toggle');
+
             const mobileMenu = document.querySelector('.mobile-menu');
-            const body = document.body;
-            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const menuToggle = document.querySelector('.menu-toggle');
 
-            if (menuToggle && mobileMenu) {
-                menuToggle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    menuToggle.classList.toggle('active');
-                    mobileMenu.classList.toggle('active');
-                    body.classList.toggle('menu-open');
-                });
+            // open / close via toggle button
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // prevent immediate close
+                mobileMenu.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
 
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        menuToggle.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                        body.classList.remove('menu-open');
-                    });
-                });
+            // close when clicking outside the menu
+            document.addEventListener('click', (e) => {
+                const clickedInsideMenu = mobileMenu.contains(e.target);
+                const clickedToggle = menuToggle.contains(e.target);
+
+                if (!clickedInsideMenu && !clickedToggle && mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+
+            // prevent closing when clicking inside the menu (including links)
+            mobileMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
             }
+
         }
 
         // --- Lifecycle ---
@@ -428,23 +410,37 @@
                 navLogo.classList.remove('split');
             });
         }
+
+        // Optional: Add a little bounce effect on hover
+        document.querySelectorAll('.nav-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.querySelector('ion-icon').style.transform = 'scale(1.2) rotate(-8deg)';
+            });
+            icon.addEventListener('mouseleave', () => {
+                icon.querySelector('ion-icon').style.transform = '';
+            });
+        });
     </script>
+    <script src="menu/main.js"></script>
+    <script>
+        let lastScrollY = window.scrollY;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > lastScrollY && currentScroll > 100) {
+                // scrolling down → hide nav
+                nav.classList.add('nav-hidden');
+            } else {
+                // scrolling up → show nav
+                nav.classList.remove('nav-hidden');
+            }
+
+            lastScrollY = currentScroll;
+        });
+    </script>
+
 </body>
-
-<style>
-
-</style>
-<script>
-    // Optional: Add a little bounce effect on hover
-    document.querySelectorAll('.nav-icon').forEach(icon => {
-        icon.addEventListener('mouseenter', () => {
-            icon.querySelector('ion-icon').style.transform = 'scale(1.2) rotate(-8deg)';
-        });
-        icon.addEventListener('mouseleave', () => {
-            icon.querySelector('ion-icon').style.transform = '';
-        });
-    });
-</script>
-<script src="menu/main.js"></script>
 
 </html>
